@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond $1 !^(index\.php|assets|css|fonts|img|storage|data|js|template|robots\.txt) [NC]
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
